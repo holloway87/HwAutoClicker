@@ -1,7 +1,7 @@
 HWAutoClicker
 =============
 
-This is a simple mouse auto clicker, because I wanted to implement this feature myself using C++.
+This is a simple mouse auto clicker for linux, because I wanted to implement this feature myself using C++.
 
 At the moment there is no configuration, the auto click is enabled and disabled via the Alt-A hotkey and produces clicks
 every 100ms.
