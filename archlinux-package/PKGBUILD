@@ -1,0 +1,24 @@
+# Maintainer: Thomas Rudolph <me@holloway-web.de>
+
+pkgname=hw-auto-clicker
+pkgver=0.1
+pkgrel=1
+pkgdesc='A simple autoclicker at 100ms with the hotkey Alt-A.  Has no user interface.'
+arch=('x86_64' 'i686')
+url='https://github.com/holloway87/HwAutoClicker'
+license=('custom:WTFPL')
+depends=('libx11' 'libxtst')
+makedepends=('git' 'cmake')
+source=("$pkgname::git+$url")
+md5sums=('SKIP')
+
+build() {
+    cd "$pkgname"
+    cmake -DCMAKE_INSTALL_PREFIX=/usr .
+    make
+}
+
+package() {
+    cd "$pkgname"
+    make PREFIX=/usr DESTDIR="$pkgdir" install
+}
